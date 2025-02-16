@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking Portal</title>
+    <link rel="stylesheet" href="../Styles/home.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Train Booking Portal</h1>
+
+        <!-- Navigation -->
+        <nav>
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('book-ticket')">Book Ticket</button>
+            <button onclick="showSection('view-ticket')">View Ticket</button>
+            <button onclick="showSection('update-details')">Update Details</button>
+            <button onclick="logout()">Logout</button>
+        </nav>
+
+        <!-- Home Page -->
+        <section id="home" class="section">
+            <h2>Dashboard</h2>
+            <div class="stats">
+                <div>
+                    <h3>Tickets Booked per Class</h3>
+                    <table>
+                        <tr>
+                            <th>Class</th>
+                            <th>Tickets</th>
+                        </tr>
+                        <tr>
+                            <td>First Class</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>AC Tier 1</td>
+                            <td>15</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h3>Sales Per Quarter</h3>
+                    <table>
+                        <tr>
+                            <th>Quarter</th>
+                            <th>Sales</th>
+                        </tr>
+                        <tr>
+                            <td>Q1</td>
+                            <td>$10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Q2</td>
+                            <td>$12,500</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book Ticket -->
+        <section id="book-ticket" class="section hidden">
+            <h2>Book Ticket</h2>
+            <form id="bookingForm">
+                <div class="input-box">
+                    <label>ID:</label> <input type="text" id="userID" readonly>
+                </div>
+                <div class="input-box">
+                    <label>Name:</label> <input type="text" id="userName" required>
+                </div>
+                <div class="input-box">
+                    <label>Age:</label> <input type="number" id="age" required>
+                    <span id="ageError" class="error-msg"></span>
+                </div>
+                <div class="input-box">
+                    <label>Mobile:</label> <input type="text" id="mobile" required>
+                    <span id="mobileError" class="error-msg"></span>
+                </div>
+                <div class="input-box">
+                    <label>Date:</label> <input type="date" id="date" required>
+                    <span id="dateError" class="error-msg"></span>
+                </div>
+                <div class="input-box">
+                    <label>Boarding Station:</label> <input type="text" id="boarding" required>
+                    <span id="boardingError" class="error-msg"></span>
+                </div>
+                <div class="input-box">
+                    <label>Destination Station:</label> <input type="text" id="destination" required>
+                    <span id="destinationError" class="error-msg"></span>
+                </div>
+                <div class="input-box">
+                    <label>Ticket Category:</label>
+                    <select id="category">
+                        <option>First Class</option>
+                        <option>AC Tier 1</option>
+                        <option>AC Tier 2</option>
+                        <option>Tatkal</option>
+                    </select>
+                    
+                </div>
+                <div class="input-box">
+                    <label>Trains Available:</label>
+                    <select id="train">
+                        <option>Train 101</option>
+                        <option>Train 202</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label>Number of Tickets:</label> <input type="number" id="tickets" required>
+                    <span id="ticketsError" class="error-msg"></span>
+                </div>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+
+        <!-- View Ticket -->
+        <section id="view-ticket" class="section hidden">
+            <h2>My Tickets</h2>
+            <table id="ticketTable">
+                <tr>
+                    <th>Booking ID</th>
+                    <th>User ID</th>
+                    <th>Train ID</th>
+                    <th>Journey Date</th>
+                    <th>Boarding</th>
+                    <th>Destination</th>
+                    <th>Name</th>
+                    <th>No. of Tickets</th>
+                    <th>Cancel</th>
+                </tr>
+            </table>
+
+        </section>
+
+        <!-- Update Details -->
+        <section id="update-details" class="section hidden">
+            <h2>Update Details</h2>
+            <form id="updateForm">
+                <label>Email:</label> <input type="email" id="email">
+                <label>Mobile:</label> <input type="text" id="newMobile">
+                <label>Address:</label> <input type="text" id="address">
+                <button type="submit">Update</button>
+            </form>
+
+            <h3>Change Password</h3>
+            <!-- Update Password -->
+            <form id="passwordForm">
+                <label>Current Password:</label>
+                <input type="password" id="currentPassword" required>
+                <span id="currentPasswordError" class="error"></span>
+
+                <label>New Password:</label>
+                <input type="password" id="newPassword" required>
+                <span id="newPasswordError" class="error"></span>
+
+                <label>Confirm Password:</label>
+                <input type="password" id="confirmPassword" required>
+                <span id="confirmPasswordError" class="error"></span>
+
+                <button type="submit">Update Password</button>
+            </form>
+
+        </section>
+    </div>
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Password Updated Successfully!</p>
+        </div>
+    </div>
+
+    <script src="../Scripts/homeScript.js"></script>
+
+</body>
+
+</html>

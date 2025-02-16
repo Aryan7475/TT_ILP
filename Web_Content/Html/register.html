@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Railway Portal</title>
+    <link rel="stylesheet" href="../Styles/styles.css">
+</head>
+<body>
+
+<div class="pageBg">
+<div class="container">
+    <div class="form-box">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div class="input-box">
+                <input type="text" id="reg-username" placeholder="Username">
+                <span class="error-msg" id="reg-username-error"></span>
+            </div>
+            <div class="input-box">
+                <input type="password" id="reg-password" placeholder="Password">
+                <span class="error-msg" id="reg-password-error"></span>
+            </div>
+            <div class="input-box">
+                <input type="password" id="reg-confirm-password" placeholder="Confirm Password">
+                <span class="error-msg" id="reg-confirm-password-error"></span>
+            </div>
+            <div class="input-box">
+                <input type="email" id="reg-email" placeholder="Email">
+                <span class="error-msg" id="reg-email-error"></span>
+            </div>
+            <div class="input-box">
+                <input type="text" id="reg-mobile" placeholder="Mobile Number">
+                <span class="error-msg" id="reg-mobile-error"></span>
+            </div>
+            <div class="input-box">
+                <input type="text" id="reg-aadhar" placeholder="Aadhar Number">
+                <span class="error-msg" id="reg-aadhar-error"></span>
+            </div>
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="./index.html">Login</a></p>
+        </form>
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="closeModal">&times;</span>
+                <p>Registration Successful!</p>
+                <button id="okButton">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="../Scripts/script.js"></script>
+</body>
+</html>
